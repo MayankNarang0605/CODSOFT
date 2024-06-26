@@ -1,14 +1,62 @@
+public static void main(String[] args){
 Scanner scan = new Scanner(System.in);
-public static void main(){
-int x=24;
-int n=0;
+int max=100,min=1;
+int round=1;
+while(round<0){
+System.out.println("ROUND "+round+":");
+int num= (int)(min +Math.random()*((max-min)+1));
+int n=1;
+System.out.println("Enter the number:");
 int i=scan.nextInt();
-while(i!=x){
+while(i!=num)
+{
 System.out.println("Your guess is incorrect");
-
+int diff= i-num;
+if(diff<0)
+{
+diff=-diff;
+}
+if(diff<=10)
+{
+System.out.println("Your guess is very close");
+}
+else if(diff>10 && diff<30)
+{
+System.out.println("Your guess is quite far");
+}
+else
+{
+System.out.println("Your guess is very far");
+}
+System.out.println("Re enter the number");
 i=scan.nextInt();
 n++;
+if(n>5)
+{
+break;
 }
+}
+if(n<=5)
+{
 System.out.println("Your guess is correct");
 System.out.println("Your no. of attempts are:"+n);
+}
+else
+{
+System.out.println("Number of attempts exceeded");
+System.out.println("Your guesses were incorrect");
+}
+System.out.println("1.Go to next round");
+System.out.println("2.Quit");
+int choice=scan.nextInt();
+if(choice==2){
+break;}
+else if(choice==1){
+round++;
+continue;
+}
+else{
+System.out.println("Wrong input");
+}
+}
 }
