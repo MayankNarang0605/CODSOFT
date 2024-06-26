@@ -1,0 +1,14 @@
+Scanner scan = new Scanner(System.in);
+public static void main(){
+int x=24;
+int n=0;
+int i=scan.nextInt();
+while(i!=x){
+System.out.println("Your guess is incorrect");
+
+i=scan.nextInt();
+n++;
+}
+System.out.println("Your guess is correct");
+System.out.println("Your no. of attempts are:"+n);
+}
